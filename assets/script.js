@@ -1,0 +1,9 @@
+// $(document).ready(function(){		
+// 		$('.checkbox').click(function(){
+// 			if($(this).is(':checked')){
+// 				$('#password2').attr('type','text');
+// 			}else{
+// 				$('#password2').attr('type','password');
+// 			}
+// 		});
+// 	});
