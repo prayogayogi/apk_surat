@@ -34,7 +34,7 @@
                 </td>
                 <td>
                   <a href="<?= base_url('dataLab/hapus/') . $row['id_dosen']; ?>" onclick="return confirm('Yakin Inggin Hapus..?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                  <a href="<?= base_url('dataLab/edit/') . $row['id_dosen']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
+                  <a href="<?= base_url('dataLab/editDataDosen/') . $row['id_dosen']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
                 </td>
               </tr>
             <?php endforeach; ?>

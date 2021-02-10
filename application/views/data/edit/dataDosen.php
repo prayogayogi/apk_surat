@@ -6,7 +6,7 @@
           <h5 class="card-header">Edit Data Dosen</h5>
           <div class="card-body">
             <div class="modal-body">
-              <?= form_open_multipart('dataLab/aksiTambahDataDosen') ?>
+              <?= form_open_multipart('dataLab/aksiEditDataDosen') ?>
               <?php foreach ($edit as $edits) : ?>
                 <input type="hidden" name="id" class="form-control" id="exampleInputEmail1" value="<?= $edits['id_dosen']; ?>">
                 <div class="form-group">

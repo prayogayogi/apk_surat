@@ -97,9 +97,8 @@
         <div class="modal-body">
           <?= form_open_multipart('dataLab/editPegawai') ?>
           <div class="form-group">
-            <input type="hidden" name="id" value="<?= $row['id_pegawai'] ?>">
             <label for="exampleInputEmail1">Nama</label>
-            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" value="<?= $row['nama'] ?>" readonly>
+            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" value="<?= $row['nama'] ?>">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>

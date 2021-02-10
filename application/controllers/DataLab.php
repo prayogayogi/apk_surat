@@ -71,7 +71,7 @@ class DataLab extends CI_Controller
   }
 
   // view edit data dosen
-  public function edit($id)
+  public function editDataDosen($id)
   {
     $where = ['id_dosen' => $id];
     $data['edit'] = $this->datalab_m->editDataDosen($where)->result_array();
@@ -83,6 +83,32 @@ class DataLab extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function aksiEditDataDosen()
+  {
+    $where = $this->input->post('nama');
+    $data = [
+      'jabatan' => $this->input->post('jabatan'),
+      'number' => $this->input->post('number')
+    ];
+
+    $foto = $_FILES['file'];
+    if ($foto) {
+      $config['allowed_types']  = 'gif|jpg|png';
+      $config['max_size']       = '2048';
+      $config['upload_path']    = './assets/gambar/dosen/';
+      $this->load->library('upload', $config);
+
+      if ($this->upload->do_upload('gambar')) {
+        $foto = $this->upload->data('file_name', TRUE);
+      } else {
+        echo "error";
+      }
+    }
+    $this->db->set($data);
+    $this->db->where($where);
+    $this->db->update('data_dosen');
+    redirect('dataLab/dosen');
+  }
 
   // view data pegawai
   public function pegawai()
@@ -137,35 +163,33 @@ class DataLab extends CI_Controller
   // edit data pegawai
   function editPegawai()
   {
-    $gambarPegawai = $this->db->get('data_pegawai')->row_array();
     $where = [
-      'id_pegawai' => $this->input->post('id')
+      'email' => $this->input->post('email')
     ];
-    $gambar = $_FILES['gambar'];
+    $gambarPegawai = $this->db->get_where('data_pegawai', $where)->row_array();
+    $gambar = $_FILES['gambar']['name'];
     if ($gambar) {
       $config['allowed_types'] = 'gif|jpg|png';
-      $config['upload_path'] = '.assets/gambar/pegawai/';
+      $config['upload_path'] = './assets/gambar/pegawai/';
       $this->load->library('upload', $config);
 
-      if ($this->uploa->do_upload('gambar')) {
-        $ambilDataGmabar = $gambarPegawai['gamabar'];
-        if ($ambilDataGmabar != 'default.jpg') {
-          unlink(FCPATH . '/assets/gambar/pegawai/' . $ambilDataGmabar);
+      if ($this->upload->do_upload('gambar')) {
+        $gambarLama = $gambarPegawai['gambar'];
+        if ($gambarLama != 'default.jpg') {
+          unlink(FCPATH . '/assets/gambar/pegawai/' . $gambarLama);
         }
         $foto = $this->upload->data('file_name', TRUE);
+        $this->db->set('gambar', $foto);
       } else {
         echo "erorr";
       }
     }
-
     $data = [
       'nama' => $this->input->post('nama'),
-      'email' => $this->input->post('email'),
-      'no_hp' => $this->input->post('no_hp'),
-      'foto' => $foto
+      'no_hp' =>  $this->input->post('no_hp')
     ];
-
     $this->datalab_m->editDataPegawai($where, $data);
+    redirect('dataLab/pegawai');
   }
 
 
