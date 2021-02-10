@@ -58,7 +58,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <?= form_open_multipart('dataLab/tambahData'); ?>
+        <?= form_open_multipart('dataLab/tambahDataMagang'); ?>
         <div class="form-group">
           <label for="exampleInputEmail1">Nama</label>
           <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nama" autocomplete="off">
@@ -68,14 +68,22 @@
           <input type="text" name="jabatan" class="form-control" id="exampleInputEmail1" placeholder="Masukan Jabatan" autocomplete="off">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">No Hp</label>
-          <input type="number" name="no_hp" class="form-control" id="exampleInputEmail1" placeholder="Masukan No Hp">
+          <label for="exampleInputEmail1">Semester</label>
+          <input type="number" name="semester" class="form-control" id="exampleInputEmail1" placeholder="Masukan No Hp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">email</label>
+          <input type="number" name="email" class="form-control" id="exampleInputEmail1" placeholder="Masukan No Hp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">alamat</label>
+          <input type="number" name="alamat" class="form-control" id="exampleInputEmail1" placeholder="Masukan No Hp">
         </div>
         <div class="modal-footer">
           <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
-        </form>
+        <?= form_close(); ?>
       </div>
     </div>
   </div>
