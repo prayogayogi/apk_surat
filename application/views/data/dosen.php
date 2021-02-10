@@ -30,7 +30,7 @@
                 <td><?= $row['jabatan']; ?></td>
                 <td><?= $row['no_hp']; ?></td>
                 <td>
-                  <img src="<?= base_url('assets/gambar/') . $row['gambar']; ?>" width="50px" alt="">
+                  <img src="<?= base_url('assets/gambar/dosen/') . $row['gambar']; ?>" width="50px" alt="">
                 </td>
                 <td>
                   <a href="<?= base_url('dataLab/hapus/') . $row['id_dosen']; ?>" onclick="return confirm('Yakin Inggin Hapus..?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

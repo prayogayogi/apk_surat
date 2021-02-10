@@ -36,7 +36,7 @@ class DataLab extends CI_Controller
     if ($gambar) {
       $config['allowed_types']  = 'gif|jpg|png';
       $config['max_size']       = '2048';
-      $config['upload_path']    = './assets/gambar/';
+      $config['upload_path']    = './assets/gambar/dosen/';
       $this->load->library('upload', $config);
 
       if ($this->upload->do_upload('gambar')) {
@@ -294,5 +294,8 @@ class DataLab extends CI_Controller
   // tamabh data
   public function tambahDataMagang()
   {
+    $this->input->post('nama');
+    $this->input->post('npm');
+    $this->input->post('npm');
   }
 }
