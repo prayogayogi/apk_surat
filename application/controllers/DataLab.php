@@ -292,5 +292,7 @@ class DataLab extends CI_Controller
     $this->load->view('template/footer');
   }
   // tamabh data
-
+  public function tambahData()
+  {
+  }
 }

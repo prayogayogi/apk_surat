@@ -58,23 +58,23 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="<?= base_url('dataLab/tambahData'); ?>">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Nama</label>
-            <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nama" autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Jabatan</label>
-            <input type="text" name="jabatan" class="form-control" id="exampleInputEmail1" placeholder="Masukan Jabatan" autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">No Hp</label>
-            <input type="number" name="no_hp" class="form-control" id="exampleInputEmail1" placeholder="Masukan No Hp">
-          </div>
-          <div class="modal-footer">
-            <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-          </div>
+        <?= form_open_multipart('dataLab/tambahData'); ?>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nama</label>
+          <input type="text" name="nama" class="form-control" id="exampleInputEmail1" placeholder="Masukan Nama" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Jabatan</label>
+          <input type="text" name="jabatan" class="form-control" id="exampleInputEmail1" placeholder="Masukan Jabatan" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">No Hp</label>
+          <input type="number" name="no_hp" class="form-control" id="exampleInputEmail1" placeholder="Masukan No Hp">
+        </div>
+        <div class="modal-footer">
+          <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
         </form>
       </div>
     </div>
