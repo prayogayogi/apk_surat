@@ -15,7 +15,6 @@ class DataLab extends CI_Controller
   // view tampil data dosen
   public function dosen()
   {
-
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $data['dosen'] = $this->datalab_m->dosen()->result_array();
     $data['judul'] = 'Data Dosen Lab';
@@ -291,6 +290,7 @@ class DataLab extends CI_Controller
     $this->load->view('data/mahasiswaMagang', $data);
     $this->load->view('template/footer');
   }
+
   // tamabh data
   public function tambahDataMagang()
   {

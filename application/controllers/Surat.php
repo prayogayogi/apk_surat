@@ -69,7 +69,13 @@ class Surat extends CI_Controller
     $data = [
       'id' => $id
     ];
-    $this->surat_m->hapusSuratMasuk($data);
+    $file = $this->db->get_where('suratmasuk', $data)->row_array();
+    if ($file['file'] != 'default.jpg') {
+      unlink(FCPATH) . '/assets/file/suratmasuk/' . $file['file'];
+    }
+    $this->db->where($data);
+    $this->db->delete('suratmasuk');
+    // $this->surat_m->hapusSuratMasuk($data);
     redirect('surat/suratMasuk');
   }
 
@@ -92,6 +98,7 @@ class Surat extends CI_Controller
   // AKSI EDIT SURAT MASUK
   public function aksiEditSuratMasuk()
   {
+
     $data = [
       'id' => $this->input->post('id'),
       'no_agenda' => $this->input->post('no_agenda'),

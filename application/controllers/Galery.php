@@ -24,8 +24,14 @@ class Galery extends CI_Controller
     $this->load->view('template/footer');
   }
 
-  public function proses_download()
+  public function prosesDownloadSuratMasuk($file)
   {
-    force_download('assets/file/suratmasuk/foto5.jpg', NULL);
+
+    force_download('assets/file/suratmasuk/' . $file, NULL);
+  }
+
+  public function prosesDownloadSuratKeluar($file)
+  {
+    force_download('assets/file/suratkeluar/' . $file, NULL);
   }
 }

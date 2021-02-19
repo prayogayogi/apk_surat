@@ -25,7 +25,7 @@
                       <h5 class="card-title"><?= $row['pengirim'] ?></h5>
                       <p class="card-text"><?= $row['isi_surat'] ?></p>
                       <p class="card-text"><small class="text-muted"><?= $row['tgl_surat'] ?></small></p>
-                      <a href="<?= base_url('index.php/galery/proses_download/') ?>" class="badge badge-success">Download</a>
+                      <a href="<?= base_url('index.php/galery/prosesDownloadSuratMasuk/') . $row['file'] ?>" class="badge badge-success">Download</a>
                     </div>
                   </div>
                 </div>
@@ -49,6 +49,7 @@
                       <h5 class="card-title"><?= $row['pengirim'] ?></h5>
                       <p class="card-text"><?= $row['isi_surat'] ?></p>
                       <p class="card-text"><small class="text-muted"><?= $row['tgl_surat'] ?></small></p>
+                      <a href="<?= base_url('index.php/galery/prosesDownloadSuratKeluar/') . $row['file'] ?>" class="badge badge-success">Download</a>
                     </div>
                   </div>
                 </div>
